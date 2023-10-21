@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<h1 id="dName">NAME</h1>
+	<h2 id="dGender">GENDER</h2>
+	<h3 id="dEmail">EMAIL</h3>
+	<h4 id="dMobile">MOBILE</h4>
+	<hr>
+	<button onclick="showName()">NAME</button>
+	<button onclick="showGender()">GENDER</button>
+	<button onclick="showEmail()">EMAIL</button>
+	<button onclick="showMobile()">MOBILE</button>
+	<button onclick="resetForm()">RESET FORM</button>
+	<button onclick="resetDisplay()">RESET DISPLAY</button>
+	<script type="text/javascript">
+
+    let inp1 = document.getElementById("name")
+    let inp2= document.getElementById("gender")
+    let inp3 = document.getElementById("email")
+    let inp4 = document.getElementById("mobile")    
+
+    let nam = document.getElementById("dName")
+    let gen = document.getElementById("dGender")
+    let ema = document.getElementById("dEmail")
+    let mob = document.getElementById("dMobile")
+
+		function showName() {
+			console.log(nam.innerText,inp1.value)
+            // Show filled name inside h1
+		}
+
+		function showGender() {
+            console.log(gen.innerText,inp2.value)
+			// Show the selected gender inside h2
+		}
+
+		function showEmail() {
+            console.log(ema.innerText,inp3.value)
+			// Show the filled email inside h3
+		}
+
+		function showMobile() {
+            console.log(mob.innerText,inp4.value)
+			// Show the filled mobile inside h4
+		}
+
+		function resetForm() {
+			// Reset all the form elements to default values (blank "")
+		}
+
+		function resetDisplay() {
+			// Reset all the headings (h1, h2, h3, h4) to blank values
+		}
+	</script>
+</body>
+</html>
