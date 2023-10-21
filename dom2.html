@@ -3,18 +3,21 @@
   <head>
     <title>Events</title>
   </head>
+  <style>
+    img{
+      width: 50%;
+    }
+  </style>
   <body>
-    <img
+    <img onclick="print()"
       src="https://miro.medium.com/max/1400/1*mdcu3Ku9r44HMtraHUqu5g.jpeg"
-      alt="" onclick="print"
+      alt=""
     />
-    <button onclick="print()">click</button>
+    <!-- <button onclick="print()">click</button> -->
   </body>
 </html>
 <script>
-    let img =  document.getElementById("img1")
-    
         function print(){
-        alert("The website you are going to visit may harm your computer, do you still want to redirect")
+        alert("The website you are going to visit may harm your computer, do you still want to redirect?")
         }
 </script>
