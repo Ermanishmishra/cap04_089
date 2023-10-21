@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <input type="number" placeholder="first value" id="input1">
+    <input type="number" placeholder="second value" id="input2">
+    <button id="add" onclick="Addition()">Add</button>
+</body>
+</html>
+
+<script>
+    let va1 = document.getElementById("input1")
+    let va2 = document.getElementById("input2")
+    function Addition(){
+        console.log(Number(va1.value) * Number(va2.value))
+
+    }
+</script>
+
+
+
+
