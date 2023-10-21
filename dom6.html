@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom-6</title>
+</head>
+    <style>
+        button{
+            margin-left: 20px;
+        }
+        
+       
+    </style>
+<body>
+
+    <input type="number" id="inp1" placeholder="enter 1st Number">
+    <input type="number" id="inp2" placeholder="enter 2nd Number"><br><br>
+    <button onclick="print1()">Add</button>
+    <button onclick="print2()">Subtract</button>
+    <button onclick="print3()">Multiply</button>
+    <button onclick="print4()">Divide</button>
+
+    
+</body>
+</html>
+<script>
+    let inputtag1 = document.getElementById("inp1")
+    let inputtag2 = document.getElementById("inp2")
+    function print1(){
+        alert(Number(inputtag1.value) + Number(inputtag2.value))
+    }
+    function print2(){
+        alert(Number(inputtag1.value) - Number(inputtag2.value))
+    }
+    function print3(){
+        alert(Number(inputtag1.value) * Number(inputtag2.value))
+    }
+    function print4(){
+        alert(Number(inputtag1.value) / Number(inputtag2.value))
+    }
+</script>
