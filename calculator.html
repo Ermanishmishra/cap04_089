@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-weight: bold;
+            font-size: 22px;
+            color: #ff6525;
+            border-color: #ecf0f3;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .calculator{
+            border-color: #ecf0f3;
+            padding: 15px;
+            border-radius: 30px;
+            box-shadow: inset 5px 5px 12px #fff,
+                        5px 5px 12px rgb(0, 0, 0, 0.14);
+            display: grid;
+            grid-template-columns: repeat(4,70px);
+            border: 2px solid #ff6525;
+        }
+        input{
+            grid-column: span 4;
+            width: 260px;
+            height: 70px;
+            background-color: #ecf0f3;
+            border: none;
+            box-shadow: inset -5px -5px 12px #fff,
+                        inset 5px 5px 12px rgb(0, 0, 0,0.14);
+            border-radius: 30px;
+            outline: none;
+            font-size: 50px;
+            text-align: end;
+            margin: 40px auto;
+            padding: 10px;
+        }
+        input::placeholder{
+            color: #ff6525;
+        }
+        button{
+            width: 48px;
+            height: 48px;
+            box-shadow: -5px -5px 12px #fff,
+                         5px 5px 12px rgb(0, 0, 0,0.14);
+            border-radius: 50%;
+            border: none;
+            margin: 8px auto;
+        }
+        .equal{
+            width: 115px;
+            border-radius: 40px;
+            margin: 8px 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <input type="text" placeholder="0" id="result">
+            <button onclick="clrs()">AC</button>
+            <button onclick="dle()">DEL</button>
+            <button onclick="display('%')">%</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="display('.')">.</button>
+            <button class="equal" onclick="calculate()">=</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var result = document.getElementById("result");
+    function display(number){
+         result.value += number;
+         console.log(result.value)
+         //console.log(number)
+    }
+    function calculate(){
+        var final_number = result.value;
+        var final_result = eval(final_number);
+        result.value = final_result;
+       // console.log(result.value)
+    }
+    function clrs(){
+        result.value = "";
+    }
+    function dle(){
+        result.value = result.value.slice(0,-1);
+       // console.log(result.value)
+
+    }
+</script>
