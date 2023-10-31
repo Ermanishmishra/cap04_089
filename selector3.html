@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+    
+</head>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: skyblue;
+        }
+        #span{
+            color: red;
+        }
+        .wrapper{
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 15px;
+            background: black;
+            border-radius: 5px;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+        }
+        input{
+            outline: none;
+            border: none;
+            padding: 5px;
+        }
+        button{
+            color: white;
+            padding: 10px;
+            border: 2px solid white;
+            background: black;
+            display: block;
+            margin-top: 10%;
+            cursor: pointer;
+        }
+    </style>
+<body>
+    <div class="wrapper">
+        <p>Weight in KG:
+            <input type="text" id="Weight"><br><span id="width_error"></span>
+        </p>
+
+        <p>Height in CM:
+            <input type="text" id="Height"><br><span id="Height_error"></span>
+
+        </p>
+        <button id="btn">calculate</button>
+        <p id="output"></p>
+    </div>
+</body>
+</html>
+<script>
+   let button = document.getElementById("btn");
+
+   button.addEventListener('click',()=>{
+    const Weight = parseInt(document.getElementById('Weight').value);
+    const Height = parseInt(document.getElementById('Height').value);
+    const result = document.getElementById('output');
+    let Height_status = false;
+    let Weight_status = false;
+    if(Height ==="" || isNaN(Height) || (Height<=0)){
+        document.getElementById('Height_error') = "please provide valid height";
+    }
+    else{
+        // document.getElementById("Height_error") = "";
+        Height_status = true;
+    }
+    if(Weight === "" || isNaN(Weight) || (Weight<=0)){
+        document.getElementById('Weight_error') = "Please provide a valid weight";
+    }
+    else{
+        // document.getElementById('Weight_error')= "";
+        Weight_status = true;
+    }
+
+    if(Height_status && Weight_status){
+        const bmi = (Weight/((Height*Height)/10000)).toFixed(2);
+
+        if(bmi < 18.6){
+            result.innerHTML = 'Under Weight : ' + bmi;
+        }
+        else if(bmi>=18.6 && bmi < 24.9){
+            result.innerHTML = "Normal : " + bmi;
+         }
+         else{
+            result.innerHTML = "OverWeight : " + bmi;
+         }
+
+    }
+   });
+</script>
