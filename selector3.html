@@ -46,11 +46,13 @@
 <body>
     <div class="wrapper">
         <p>Weight in KG:
-            <input type="text" id="Weight"><br><span id="width_error"></span>
+            <input type="text" id="Weight"><br> 
+            <!-- <span id="width_error"></span> -->
         </p>
 
         <p>Height in CM:
-            <input type="text" id="Height"><br><span id="Height_error"></span>
+            <input type="text" id="Height"><br>
+            <!-- <span id="Height_error"></span> -->
 
         </p>
         <button id="btn">calculate</button>
@@ -91,8 +93,12 @@
         else if(bmi>=18.6 && bmi < 24.9){
             result.innerHTML = "Normal : " + bmi;
          }
+         else if(bmi>=25 && bmi<=29.9){
+            result.innerHTML =  "OverWeight : " + bmi;
+
+         }
          else{
-            result.innerHTML = "OverWeight : " + bmi;
+            result.innerHTML = "Obese : " + bmi;
          }
 
     }
